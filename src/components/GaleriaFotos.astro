@@ -2,7 +2,16 @@
 // Galeria.astro
 ---
 
-<section class="relative w-full py-8 px-6" id="seccion-galeria">
+<section class="relative w-full pb-8 px-6" id="seccion-galeria">
+    <!-- SEPARADOR SUPERIOR -->
+    <div class="flex justify-center mb-6">
+        <img
+            src="/imagenes/Separador.png"
+            alt="Separador decorativo"
+            class="w-32 md:w-48 lg:w-56 h-auto object-contain icono-lila-galeria"
+        />
+    </div>
+
     <!-- TÍTULO -->
     <div
         class="max-w-md mx-auto text-center mb-8 opacity-0"
@@ -380,7 +389,7 @@
             });
 
             // ── FOTOS ──
-            const fotos = Array.from({ length: 7 }, (_, i) => ({
+            const fotos = Array.from({ length: 6 }, (_, i) => ({
                 src: `/imagenes/foto${i + 1}.png`,
                 alt: `Foto ${i + 1}`,
             }));
@@ -837,6 +846,10 @@
 </script>
 
 <style>
+    .icono-lila-galeria {
+        filter: brightness(0) saturate(100%) invert(16%) sepia(89%)
+            saturate(3571%) hue-rotate(274deg) brightness(82%) contrast(108%);
+    }
     #slides-viewport {
         position: relative;
         contain: strict;
@@ -872,18 +885,22 @@
         padding: 12px 28px;
         background: #5a1491;
         color: white;
-        border: 1px solid rgba(255,255,255,0.15);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 50px;
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 0.08em;
         cursor: pointer;
         transition: all 0.35s ease;
-        box-shadow: 0 6px 20px rgba(90,20,145,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+        box-shadow:
+            0 6px 20px rgba(90, 20, 145, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
     .boton-galeria:hover {
         transform: translateY(-3px) scale(1.03);
-        box-shadow: 0 10px 30px rgba(90,20,145,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
+        box-shadow:
+            0 10px 30px rgba(90, 20, 145, 0.45),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
     @keyframes ping {
         75%,
